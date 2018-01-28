@@ -1,14 +1,7 @@
-<!-- <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content> -->
+<ion-content>
+    <ion-slides #slider (ionSlideNextEnd)="loadNext()" (ionSlidePrevEnd)="loadPrev()" [initialSlide]="1">
+        <ion-slide *ngFor="let n of numbers">
+            <img [src]="getUrl(n | date: 'yyyy-MMMM-d')" class="slide-image"/>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
